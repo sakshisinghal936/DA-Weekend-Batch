@@ -1,0 +1,68 @@
+# Showing the Dataset
+use myntra;
+
+select * from products;
+
+ 1. Finding the most expensive product on myntra
+
+ 2. Finding the least expensive product on myntra
+
+3. Finding the top 5 most expensive product on myntra
+
+ 4. Top 5 products based on best rating | rating*rating count
+
+ 5. Finding the second most expensive product
+
+ 6. Finding the second least expensive product
+
+ 7. Finding the 10th most expensive product
+
+ 8. Finding the worst rated product by nike
+
+
+9. Sort the products in alphaetical descending order based on their product_name and show the last 10 of them
+select * from gfg.products 
+order by product_name asc limit 10;
+
+10. Finding the top 10 best rated tshirt from nike or adidas | rating*rating count
+
+
+11. Finding the list of tshirts from nike and adidas prices between 1000 and 1200 | Sort them based on ascending order of brand_name & price
+
+12. Finding the names of unique brands
+
+13. Finding the number of unique brands
+
+14. Finding the number of products in each brands
+
+15. Finding the top 5 brand who has the most number of products | different product in their inventory
+
+16. Finding the top 5 brand who sold the most number of products
+
+17. Finding the top 5 most expensive brands
+
+18. Finding the top 5 least expensive brands
+
+19. Finding the top 10 best-selling product categories 
+
+20. Finding the top 10 brands who gives maximum discount
+
+21. Finding the top 5 most expensive product categories
+
+22. Brand Report Card
+
+23. Which product_category of any brand is sold the most?
+
+24. List top 5 brands which has sold most number of tshirts
+
+25. List top 5 brands which has sold most number of shirts
+
+26. List top 5 brands which has sold most number of jeans
+
+27. List top 5 brands which has sold most number of dresses
+
+28. Most popular product name listed in Myntra
+
+29. Number of products sold for every rating (0 - 5)
+
+30. Number of products sold for every rating in tshirt category
