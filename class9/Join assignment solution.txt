@@ -1,0 +1,40 @@
+1.	"SELECT c.FirstName, c.LastName, c.Email, c.PhoneNumber FROM customers c JOIN sales s ON c.CustomerID = s.CustomerID;", 
+
+2.	"SELECT sr.FirstName, sr.LastName, SUM(s.TotalAmount) AS TotalSalesAmount FROM sales s JOIN sales_representative sr ON s.SalesRepID = sr.SalesRepID GROUP BY sr.SalesRepID;", 
+
+3.	"SELECT p.ProductName, p.Category, s.SupplierName, s.ContactPerson, s.Email, s.PhoneNumber FROM products p JOIN suppliers s ON p.SupplierID = s.SupplierID;",
+
+4.	 "SELECT c.FirstName, c.LastName, p.ProductName, s.Quantity, s.TotalAmount FROM sales s JOIN customers c ON s.CustomerID = c.CustomerID JOIN products p ON s.ProductID = p.ProductID;",
+
+5.	 "SELECT sr.FirstName, sr.LastName, COUNT(s.SaleID) AS NumberOfSales FROM sales s JOIN sales_representative sr ON s.SalesRepID = sr.SalesRepID GROUP BY sr.SalesRepID;",
+
+6.	 "SELECT sr.FirstName, sr.LastName, sr.Region, s.SaleID, s.TotalAmount FROM sales s JOIN sales_representative sr ON s.SalesRepID = sr.SalesRepID WHERE s.StoreLocation = 'New York';", 
+
+7.	"SELECT p.ProductName, p.Category, SUM(s.TotalAmount) AS TotalSalesAmount FROM sales s JOIN products p ON s.ProductID = p.ProductID GROUP BY p.ProductID;", 
+
+8.	"SELECT c.FirstName, c.LastName, p.ProductName, SUM(s.TotalAmount) AS TotalAmountSpent FROM sales s JOIN customers c ON s.CustomerID = c.CustomerID JOIN products p ON s.ProductID = p.ProductID GROUP BY c.CustomerID, p.ProductID;", 
+
+9.	"SELECT c.FirstName AS CustomerFirstName, c.LastName AS CustomerLastName, p.ProductName, s.Quantity, s.TotalAmount FROM sales s JOIN customers c ON s.CustomerID = c.CustomerID JOIN products p ON s.ProductID = p.ProductID WHERE s.SalesRepID = 101;", 
+
+10.	"SELECT sr.FirstName, sr.LastName, sr.Region, p.ProductName FROM sales s JOIN sales_representative sr ON s.SalesRepID = sr.SalesRepID JOIN products p ON s.ProductID = p.ProductID ORDER BY sr.Region;",
+ 
+11.	"SELECT c.CustomerID, COUNT(s.SaleID) AS TotalProductsSold, SUM(s.TotalAmount) AS TotalSalesAmount FROM sales s JOIN customers c ON s.CustomerID = c.CustomerID GROUP BY c.CustomerID;",
+ 
+12.	"SELECT c.FirstName, c.LastName, c.Email, c.PhoneNumber FROM customers c JOIN sales s ON c.CustomerID = s.CustomerID JOIN products p ON s.ProductID = p.ProductID GROUP BY c.CustomerID HAVING COUNT(DISTINCT p.Category) > 1;", 
+
+13.	"SELECT p.ProductName, SUM(s.Quantity) AS TotalQuantitySold, SUM(s.TotalAmount) AS TotalSalesAmount, sr.Region FROM sales s JOIN products p ON s.ProductID = p.ProductID JOIN sales_representative sr ON s.SalesRepID = sr.SalesRepID GROUP BY p.ProductID, sr.Region;", 
+
+14.	"SELECT c.FirstName, c.LastName, p.ProductName, s.TotalAmount FROM sales s JOIN customers c ON s.CustomerID = c.CustomerID JOIN products p ON s.ProductID = p.ProductID JOIN suppliers sup ON p.SupplierID = sup.SupplierID WHERE sup.SupplierName = 'ABC Corp';", 
+
+15.	"SELECT c.FirstName, c.LastName, p.ProductName, s.Quantity, s.TotalAmount FROM sales s JOIN customers c ON s.CustomerID = c.CustomerID JOIN products p ON s.ProductID = p.ProductID WHERE p.Category = 'Electronics';",
+
+16.	 "SELECT c.FirstName, c.LastName, p.ProductName, SUM(s.Quantity) AS TotalQuantity, SUM(s.TotalAmount) AS TotalSales FROM sales s JOIN customers c ON s.CustomerID = c.CustomerID JOIN products p ON s.ProductID = p.ProductID WHERE p.ProductID = 1001 GROUP BY c.CustomerID;", 
+
+17.	"SELECT sr.FirstName, sr.LastName, COUNT(s.SaleID) AS SalesCount FROM sales s JOIN sales_representative sr ON s.SalesRepID = sr.SalesRepID WHERE s.Date BETWEEN '2024-12-01' AND '2024-12-31' GROUP BY sr.SalesRepID;",
+
+18.	 "SELECT c.FirstName, c.LastName, p.ProductName FROM sales s JOIN customers c ON s.CustomerID = c.CustomerID JOIN products p ON s.ProductID = p.ProductID WHERE c.City = 'Los Angeles';", 
+
+19.	"SELECT c.FirstName, c.LastName, p.ProductName, s.TotalAmount FROM sales s JOIN customers c ON s.CustomerID = c.CustomerID JOIN products p ON s.ProductID = p.ProductID WHERE s.StoreLocation IN ('New York', 'Los Angeles');", 
+
+20.	"SELECT p.ProductName, SUM(s.TotalAmount) AS TotalSalesAmount FROM sales s JOIN products p ON s.ProductID = p.ProductID GROUP BY p.ProductID ORDER BY TotalSalesAmount DESC LIMIT 5;"
+
